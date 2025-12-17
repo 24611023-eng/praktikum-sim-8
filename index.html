@@ -51,7 +51,7 @@
     width="fitt-250"
     height="250"
     class="rounded-circle img-thumnail" >
-  <h1 class="display-4">Muzaki</h1>
+  <h1 class="display-4">Micul</h1>
   <p class="lead">Terserah dah</p>
   <svg xmlns="http://www.w3.org/2000/svg" 
   viewBox="0 0 1440 320"><path 
@@ -195,6 +195,19 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
   crossorigin="anonymous"></script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzx_oAqGYFhMYnmQipGWxvmz-iF4GcHKKjIj7BimpL68UhmgSOnQ6s3If3UapUrQe0c9w/exec'
+  const form = document.forms['Contact-Form']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
 </body>
 </html>
 
